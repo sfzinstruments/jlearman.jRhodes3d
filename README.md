@@ -42,6 +42,8 @@ Click the green "Clone or download" button above, and choose
 and load the result into your sample player.  I use Sforzando, which
 supports FLAC.
 
+You only need the jRhodes3d folder.  The rest can be discarded.
+
 ## Sampling Details
 
 The samples were recorded around 2006, from a Rhodes I had bought
