@@ -1,8 +1,8 @@
-# sfz-jRhodes3c-looped
+# jlearman.jRhodes3d
 
 1977 Rhodes Mark I Stage 73, unlooped
 
-16 Mb disk space
+70 Mb disk space
 
 ## jRhodes3 family
 
@@ -62,10 +62,13 @@ the time.
 Regarding the naming convention: the 3 is because this was my
 third sampling attempt.  (The first was a single-velocity sampling
 for dev test purposes only.  The second was aborted for technical
-reasons I don't recall.)  The "c" identifies this as the 3rd
+reasons I don't recall.)  The "d" identifies this as the 4th
 attempt at processing the samples or mapping the keyboard.
 
 The "d" mono samples are identical to the "c" samples but full-length.
+(Actually, this set does not include mono samples, but they can be
+created by taking either SV or ST samples and summing them to mono,
+since the effect is applied using mid-side technique.)
 The "d" stereo samples have the same effect applied as "c" but
 using different tools (SoX library rather than r8brain.)
 
