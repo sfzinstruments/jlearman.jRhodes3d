@@ -1,6 +1,6 @@
 # jlearman.jRhodes3d
 
-1977 Rhodes Mark I Stage 73, unlooped
+1977 Rhodes Mark I Stage 73, full-length samples
 
 70 Mb disk space
 
