@@ -54,9 +54,6 @@ a stereo image added to by applying a 2 cent pitch shift using mid-side
 technique (so the effect cancels completely when summed to mono).
 Noise was removed from the samples using CoolEdit 96.
 
-Samples in this set were looped to reduce memory footprint.
-For full-length unlooped samples, see jRhodes3d.
-
 This is not intended to be the authentic original unprocessed Rhodes;
 it's intended to be what I wanted the Rhodes to sound like most of
 the time.
