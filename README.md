@@ -2,7 +2,7 @@
 
 1977 Rhodes Mark I Stage 73, full-length samples
 
-70 Mb disk space
+90 Mb disk space (separable mono: 22MB, stereo: 36MB, stereo vibrato: 33MB)
 
 ## jRhodes3 family
 
@@ -33,6 +33,14 @@ get your choice.)
 
 The width for either of these effects is controlled via the MOD wheel.
 MOD wheel at zero is mono; at 50% gives 100% stereo, and pushed higher
+you get "extra stereo."
+
+ISSUES:
+IF you have an issue, please open an issue on this github: github.com/sfzinstruments/jlearman.jRhodes3d .
+
+If you would like a combined SFZ that has mono, stereo and stereo vibrato as programs, open an issue.
+
+
 provides "extra stereo".  When you load the soundfont, you get 100%
 stereo by default, and if you move the MOD wheel, it adjusts accordingly.
 
