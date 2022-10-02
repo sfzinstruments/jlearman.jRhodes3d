@@ -1,8 +1,11 @@
 # jlearman.jRhodes3d
 
-1977 Rhodes Mark I Stage 73, full-length samples
+1977 Rhodes Mark I Stage 73, full-length samples, FLAC format
 
 90 Mb disk space (separable mono: 22MB, stereo: 36MB, stereo vibrato: 33MB)
+
+Source: https://github.com/sfzinstruments/jlearman.jRhodes3d
+For a wav format version, see https://github.com/jlearman/jRhodes3d-wav
 
 ## jRhodes3 family
 
