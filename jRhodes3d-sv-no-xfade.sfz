@@ -8,7 +8,7 @@
 <control>
 label_cc1=Mod:width
 set_hdcc1=0.5
-prefix_sfz_path=jRhodes3d-sv/
+default_path=jRhodes3d-sv/
 
 <master>
 volume=6
