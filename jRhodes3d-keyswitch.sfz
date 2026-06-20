@@ -13,7 +13,7 @@
 // A7   - stereo vibrato with velocity crossfade
 // Bb7  - stereo vibrato without velocity crossfade
 // B7   - mono with velocity crossfade
-// C7   - mono without velocity crossfade
+// C8   - mono without velocity crossfade
 
 <control>
 label_cc1=Stereo width
