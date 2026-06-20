@@ -12,6 +12,30 @@ label_cc1=Mod:width
 set_hdcc1=0.5
 default_path=jRhodes3d-st/
 
+// Half-pedal support for sustain pedal.
+// Andrew <https://github.com/esesur> and Peter <https://github.com/peastman>)
+//
+// Requires ampeg_dynamic, which is not in original SFZ but is supported by
+// Sfizz and Plogue Sforzando.  To get true half-pedaling you also need
+// a continuous controller sustain pedal.  But, with an on/off sustain pedal
+// you can still get "poor man's half-pedaling" a.k.a. "re-pedaling":
+// if you do a quick up/down on the sustain pedal, some notes will remain.
+// Since lower notes have longer release times, more low notes will remain.
+ampeg_dynamic=1
+ampeg_releasecc64=100
+// ampeg_release_curvecc64=11 // seems to be the default, for Aria and Sfizz
+//
+// Half-pedaling curve
+// (These values were adjusted using YAMAHA EA1 Disklavier)
+<curve> curve_index=11  // for note
+v000=0
+v032=0
+v042=.1
+v054=.3
+v062=.4
+v064=1
+v127=1
+
 <master>
 volume=6
 // Mod wheel controls stereo depth
