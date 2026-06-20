@@ -16,7 +16,7 @@ volume=6
 width_oncc1=100
 width_curvecc1=99
 
-<group> lovel=1 xfout_lovel=25 xfout_hivel=60
+<group> lovel=1 xfout_lovel=25 xfout_hivel=60 hivel=60
 <region> sample=A_029__F1_5.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
 <region> sample=A_035__B1_5.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
 <region> sample=A_040__E2_5.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
@@ -33,7 +33,7 @@ width_curvecc1=99
 <region> sample=A_091__G6_5.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
 <region> sample=A_096__C7_5.flac lokey=Bb6 hikey=C8  pitch_keycenter=C7  ampeg_release=0.2
 
-<group> xfin_lovel=25 xfin_hivel=60 xfout_lovel=61 xfout_hivel=84
+<group> lovel=25 xfin_lovel=25 xfin_hivel=60 xfout_lovel=61 xfout_hivel=84 hivel=84
 <region> sample=A_029__F1_4.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
 <region> sample=A_035__B1_4.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
 <region> sample=A_040__E2_4.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
@@ -50,7 +50,7 @@ width_curvecc1=99
 <region> sample=A_091__G6_4.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
 <region> sample=A_096__C7_4.flac lokey=Bb6 hikey=C8  pitch_keycenter=C7  ampeg_release=0.2
 
-<group> xfin_lovel=61 xfin_hivel=84 xfout_lovel=85 xfout_hivel=103
+<group> lovel=61 xfin_lovel=61 xfin_hivel=84 xfout_lovel=85 xfout_hivel=103 hivel=103
 <region> sample=A_029__F1_3.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
 <region> sample=A_035__B1_3.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
 <region> sample=A_040__E2_3.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
@@ -67,7 +67,7 @@ width_curvecc1=99
 <region> sample=A_091__G6_4.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
 <region> sample=A_096__C7_4.flac lokey=Bb6 hikey=C8  pitch_keycenter=C7  ampeg_release=0.2
 
-<group> xfin_lovel=85 xfin_hivel=103 xfout_lovel=104 xfout_hivel=119
+<group> lovel=85 xfin_lovel=85 xfin_hivel=103 xfout_lovel=104 xfout_hivel=119 hivel=119
 <region> sample=A_029__F1_2.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
 <region> sample=A_035__B1_2.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
 <region> sample=A_040__E2_2.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
@@ -84,7 +84,7 @@ width_curvecc1=99
 <region> sample=A_091__G6_2.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
 <region> sample=A_096__C7_2.flac lokey=Bb6 hikey=C8  pitch_keycenter=C7  ampeg_release=0.2
 
-<group> xfin_lovel=104 xfin_hivel=119 hivel=127
+<group> lovel=104 xfin_lovel=104 xfin_hivel=119 hivel=127
 <region> sample=A_029__F1_1.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
 <region> sample=A_035__B1_1.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
 <region> sample=A_040__E2_1.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
