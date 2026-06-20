@@ -1,0 +1,583 @@
+// bankname: jRhodes3d
+// designer: Jeff Learman
+// license: CC-SA-BY: Creative Commons Share Alike with Attribution
+// comment: Free to use in your music without share-alike or attribution
+// Same as jRhodes3c except full-length samples; plus FX was added differently.
+// My intent was to get the same FX result but I might not have achieved that.
+// The stereo effect is a mild chorus baked into the samples using mid-side
+// technique so when summed to mono the effect disappears completley.
+
+// This sfz provides all versions with keyswitches:
+// G7   - stereo with velocity crossfade (default)
+// Ab7  - stereo without velocity crossfade (default for Zynthian)
+// A7   - stereo vibrato with velocity crossfade
+// Bb7  - stereo vibrato without velocity crossfade
+// B7   - mono with velocity crossfade
+// C7   - mono without velocity crossfade
+
+<control>
+label_cc1=Stereo width
+set_hdcc1=0.5
+
+<global>
+volume=6
+// Mod wheel controls stereo depth
+width_oncc1=100
+width_curvecc1=99
+sw_lokey=G7 sw_hikey=C8 sw_default=G7
+
+// Half-pedal support for sustain pedal.
+// Andrew <https://github.com/esesur> and Peter <https://github.com/peastman>)
+//
+// Requires ampeg_dynamic, which is not in original SFZ but is supported by
+// Sfizz and Plogue Sforzando.  To get true half-pedaling you also need
+// a continuous controller sustain pedal.  But, with an on/off sustain pedal
+// you can still get "poor man's half-pedaling" a.k.a. "re-pedaling":
+// if you do a quick up/down on the sustain pedal, some notes will remain.
+// Since lower notes have longer release times, more low notes will remain.
+ampeg_dynamic=1
+ampeg_releasecc64=100
+// ampeg_release_curvecc64=11 // seems to be the default, for Aria and Sfizz
+//
+// Half-pedaling curve
+// (These values were adjusted using YAMAHA EA1 Disklavier)
+<curve> curve_index=11  // for note
+v000=0
+v032=0
+v042=.1
+v054=.3
+v062=.4
+v064=1
+v127=1
+
+<master>
+sw_last=B7 sw_label=Mono
+
+<group> lovel=1 xfout_lovel=25 xfout_hivel=60 hivel=60
+<region> sample=jRhodes3d-mono/A_029__F1_5.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_035__B1_5.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_040__E2_5.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_045__A2_5.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_050__D3_5.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_055__G3_5.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_059__B3_5.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_062__D4_5.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_065__F4_5.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_071__B4_5.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_076__E5_5.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_081__A5_5.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_086__D6_5.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_091__G6_5.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_096__C7_5.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=25 xfin_lovel=25 xfin_hivel=60 xfout_lovel=61 xfout_hivel=84 hivel=84
+<region> sample=jRhodes3d-mono/A_029__F1_4.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_035__B1_4.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_040__E2_4.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_045__A2_4.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_050__D3_4.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_055__G3_4.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_059__B3_4.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_062__D4_4.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_065__F4_4.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_071__B4_4.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_076__E5_4.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_081__A5_4.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_086__D6_4.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_091__G6_4.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_096__C7_4.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=61 xfin_lovel=61 xfin_hivel=84 xfout_lovel=85 xfout_hivel=103 hivel=103
+<region> sample=jRhodes3d-mono/A_029__F1_3.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_035__B1_3.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_040__E2_3.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_045__A2_3.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_050__D3_3.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_055__G3_3.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_059__B3_3.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_062__D4_3.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_065__F4_3.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_071__B4_4.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_076__E5_4.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_081__A5_4.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_086__D6_4.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_091__G6_4.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_096__C7_4.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=85 xfin_lovel=85 xfin_hivel=103 xfout_lovel=104 xfout_hivel=119 hivel=119
+<region> sample=jRhodes3d-mono/A_029__F1_2.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_035__B1_2.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_040__E2_2.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_045__A2_2.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_050__D3_2.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_055__G3_2.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_059__B3_2.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_062__D4_2.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_065__F4_2.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_071__B4_2.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_076__E5_2.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_081__A5_2.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_086__D6_2.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_091__G6_2.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_096__C7_2.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=104 xfin_lovel=104 xfin_hivel=119 hivel=127
+<region> sample=jRhodes3d-mono/A_029__F1_1.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_035__B1_1.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_040__E2_1.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_045__A2_1.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_050__D3_1.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_055__G3_1.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_059__B3_1.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_062__D4_1.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_065__F4_1.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_071__B4_1.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_076__E5_1.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_081__A5_2.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_086__D6_2.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_091__G6_2.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_096__C7_2.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<master>
+sw_last=C8 sw_label=Mono (no velocity crossfade)
+
+<group> lovel=1 hivel=47
+<region> sample=jRhodes3d-mono/A_029__F1_5.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_035__B1_5.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_040__E2_5.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_045__A2_5.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_050__D3_5.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_055__G3_5.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_059__B3_5.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_062__D4_5.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_065__F4_5.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_071__B4_5.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_076__E5_5.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_081__A5_5.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_086__D6_5.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_091__G6_5.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_096__C7_5.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=48 hivel=72
+<region> sample=jRhodes3d-mono/A_029__F1_4.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_035__B1_4.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_040__E2_4.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_045__A2_4.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_050__D3_4.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_055__G3_4.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_059__B3_4.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_062__D4_4.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_065__F4_4.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_071__B4_4.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_076__E5_4.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_081__A5_4.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_086__D6_4.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_091__G6_4.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_096__C7_4.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=73 hivel=95
+<region> sample=jRhodes3d-mono/A_029__F1_3.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_035__B1_3.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_040__E2_3.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_045__A2_3.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_050__D3_3.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_055__G3_3.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_059__B3_3.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_062__D4_3.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_065__F4_3.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_071__B4_4.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_076__E5_4.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_081__A5_4.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_086__D6_4.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_091__G6_4.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_096__C7_4.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=96 hivel=111
+<region> sample=jRhodes3d-mono/A_029__F1_2.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_035__B1_2.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_040__E2_2.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_045__A2_2.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_050__D3_2.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_055__G3_2.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_059__B3_2.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_062__D4_2.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_065__F4_2.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_071__B4_2.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_076__E5_2.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_081__A5_2.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_086__D6_2.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_091__G6_2.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_096__C7_2.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=112 hivel=127
+<region> sample=jRhodes3d-mono/A_029__F1_1.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_035__B1_1.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_040__E2_1.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-mono/A_045__A2_1.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_050__D3_1.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_055__G3_1.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_059__B3_1.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-mono/A_062__D4_1.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_065__F4_1.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_071__B4_1.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_076__E5_1.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_081__A5_2.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-mono/A_086__D6_2.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_091__G6_2.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-mono/A_096__C7_2.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<master>
+sw_last=G7 sw_label=Stereo
+
+<group> lovel=1 xfout_lovel=25 xfout_hivel=60
+<region> sample=jRhodes3d-st/A_029__F1_5-ST.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_035__B1_5-ST.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_040__E2_5-ST.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_045__A2_5-ST.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_050__D3_5-ST.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_055__G3_5-ST.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_059__B3_5-ST.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_062__D4_5-ST.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_065__F4_5-ST.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_071__B4_5-ST.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_076__E5_5-ST.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_081__A5_5-ST.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_086__D6_5-ST.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_091__G6_5-ST.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_096__C7_5-ST.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> xfin_lovel=25 xfin_hivel=60 xfout_lovel=61 xfout_hivel=84
+<region> sample=jRhodes3d-st/A_029__F1_4-ST.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_035__B1_4-ST.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_040__E2_4-ST.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_045__A2_4-ST.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_050__D3_4-ST.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_055__G3_4-ST.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_059__B3_4-ST.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_062__D4_4-ST.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_065__F4_4-ST.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_071__B4_4-ST.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_076__E5_4-ST.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_081__A5_4-ST.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_086__D6_4-ST.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_091__G6_4-ST.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_096__C7_4-ST.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> xfin_lovel=61 xfin_hivel=84 xfout_lovel=85 xfout_hivel=103
+<region> sample=jRhodes3d-st/A_029__F1_3-ST.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_035__B1_3-ST.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_040__E2_3-ST.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_045__A2_3-ST.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_050__D3_3-ST.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_055__G3_3-ST.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_059__B3_3-ST.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_062__D4_3-ST.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_065__F4_3-ST.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_071__B4_4-ST.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_076__E5_4-ST.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_081__A5_4-ST.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_086__D6_4-ST.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_091__G6_4-ST.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_096__C7_4-ST.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> xfin_lovel=85 xfin_hivel=103 xfout_lovel=104 xfout_hivel=119
+<region> sample=jRhodes3d-st/A_029__F1_2-ST.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_035__B1_2-ST.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_040__E2_2-ST.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_045__A2_2-ST.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_050__D3_2-ST.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_055__G3_2-ST.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_059__B3_2-ST.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_062__D4_2-ST.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_065__F4_2-ST.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_071__B4_2-ST.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_076__E5_2-ST.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_081__A5_2-ST.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_086__D6_2-ST.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_091__G6_2-ST.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_096__C7_2-ST.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> xfin_lovel=104 xfin_hivel=119 hivel=127
+<region> sample=jRhodes3d-st/A_029__F1_1-ST.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_035__B1_1-ST.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_040__E2_1-ST.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_045__A2_1-ST.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_050__D3_1-ST.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_055__G3_1-ST.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_059__B3_1-ST.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_062__D4_1-ST.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_065__F4_1-ST.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_071__B4_1-ST.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_076__E5_1-ST.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_081__A5_2-ST.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_086__D6_2-ST.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_091__G6_2-ST.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_096__C7_2-ST.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<master>
+sw_last=Ab7 sw_label=Stereo (no velocity crossfade)
+
+<group> lovel=1 hivel=47
+<region> sample=jRhodes3d-st/A_029__F1_5-ST.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_035__B1_5-ST.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_040__E2_5-ST.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_045__A2_5-ST.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_050__D3_5-ST.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_055__G3_5-ST.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_059__B3_5-ST.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_062__D4_5-ST.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_065__F4_5-ST.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_071__B4_5-ST.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_076__E5_5-ST.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_081__A5_5-ST.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_086__D6_5-ST.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_091__G6_5-ST.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_096__C7_5-ST.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=48 hivel=72
+<region> sample=jRhodes3d-st/A_029__F1_4-ST.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_035__B1_4-ST.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_040__E2_4-ST.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_045__A2_4-ST.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_050__D3_4-ST.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_055__G3_4-ST.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_059__B3_4-ST.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_062__D4_4-ST.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_065__F4_4-ST.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_071__B4_4-ST.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_076__E5_4-ST.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_081__A5_4-ST.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_086__D6_4-ST.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_091__G6_4-ST.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_096__C7_4-ST.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=73 hivel=95
+<region> sample=jRhodes3d-st/A_029__F1_3-ST.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_035__B1_3-ST.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_040__E2_3-ST.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_045__A2_3-ST.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_050__D3_3-ST.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_055__G3_3-ST.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_059__B3_3-ST.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_062__D4_3-ST.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_065__F4_3-ST.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_071__B4_4-ST.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_076__E5_4-ST.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_081__A5_4-ST.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_086__D6_4-ST.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_091__G6_4-ST.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_096__C7_4-ST.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=96 hivel=111
+<region> sample=jRhodes3d-st/A_029__F1_2-ST.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_035__B1_2-ST.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_040__E2_2-ST.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_045__A2_2-ST.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_050__D3_2-ST.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_055__G3_2-ST.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_059__B3_2-ST.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_062__D4_2-ST.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_065__F4_2-ST.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_071__B4_2-ST.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_076__E5_2-ST.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_081__A5_2-ST.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_086__D6_2-ST.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_091__G6_2-ST.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_096__C7_2-ST.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=112 hivel=127
+<region> sample=jRhodes3d-st/A_029__F1_1-ST.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_035__B1_1-ST.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_040__E2_1-ST.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-st/A_045__A2_1-ST.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_050__D3_1-ST.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_055__G3_1-ST.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_059__B3_1-ST.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-st/A_062__D4_1-ST.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_065__F4_1-ST.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_071__B4_1-ST.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_076__E5_1-ST.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_081__A5_2-ST.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-st/A_086__D6_2-ST.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_091__G6_2-ST.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-st/A_096__C7_2-ST.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<master>
+sw_last=A7 sw_label=Stereo vibrato
+
+<group> lovel=1 xfout_lovel=25 xfout_hivel=60
+<region> sample=jRhodes3d-sv/A_029__F1_5-SV.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_035__B1_5-SV.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_040__E2_5-SV.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_045__A2_5-SV.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_050__D3_5-SV.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_055__G3_5-SV.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_059__B3_5-SV.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_062__D4_5-SV.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_065__F4_5-SV.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_071__B4_5-SV.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_076__E5_5-SV.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_081__A5_5-SV.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_086__D6_5-SV.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_091__G6_5-SV.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_096__C7_5-SV.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> xfin_lovel=25 xfin_hivel=60 xfout_lovel=61 xfout_hivel=84
+<region> sample=jRhodes3d-sv/A_029__F1_4-SV.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_035__B1_4-SV.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_040__E2_4-SV.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_045__A2_4-SV.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_050__D3_4-SV.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_055__G3_4-SV.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_059__B3_4-SV.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_062__D4_4-SV.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_065__F4_4-SV.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_071__B4_4-SV.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_076__E5_4-SV.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_081__A5_4-SV.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_086__D6_4-SV.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_091__G6_4-SV.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_096__C7_4-SV.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> xfin_lovel=61 xfin_hivel=84 xfout_lovel=85 xfout_hivel=103
+<region> sample=jRhodes3d-sv/A_029__F1_3-SV.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_035__B1_3-SV.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_040__E2_3-SV.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_045__A2_3-SV.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_050__D3_3-SV.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_055__G3_3-SV.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_059__B3_3-SV.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_062__D4_3-SV.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_065__F4_3-SV.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_071__B4_4-SV.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_076__E5_4-SV.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_081__A5_4-SV.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_086__D6_4-SV.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_091__G6_4-SV.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_096__C7_4-SV.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> xfin_lovel=85 xfin_hivel=103 xfout_lovel=104 xfout_hivel=119
+<region> sample=jRhodes3d-sv/A_029__F1_2-SV.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_035__B1_2-SV.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_040__E2_2-SV.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_045__A2_2-SV.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_050__D3_2-SV.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_055__G3_2-SV.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_059__B3_2-SV.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_062__D4_2-SV.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_065__F4_2-SV.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_071__B4_2-SV.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_076__E5_2-SV.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_081__A5_2-SV.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_086__D6_2-SV.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_091__G6_2-SV.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_096__C7_2-SV.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> xfin_lovel=104 xfin_hivel=119 hivel=127
+<region> sample=jRhodes3d-sv/A_029__F1_1-SV.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_035__B1_1-SV.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_040__E2_1-SV.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_045__A2_1-SV.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_050__D3_1-SV.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_055__G3_1-SV.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_059__B3_1-SV.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_062__D4_1-SV.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_065__F4_1-SV.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_071__B4_1-SV.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_076__E5_1-SV.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_081__A5_2-SV.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_086__D6_2-SV.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_091__G6_2-SV.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_096__C7_2-SV.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<master>
+sw_last=Bb7 sw_label=Stereo vibrato (no velocity crossfade)
+
+<group> lovel=1 hivel=47
+<region> sample=jRhodes3d-sv/A_029__F1_5-SV.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_035__B1_5-SV.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_040__E2_5-SV.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_045__A2_5-SV.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_050__D3_5-SV.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_055__G3_5-SV.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_059__B3_5-SV.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_062__D4_5-SV.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_065__F4_5-SV.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_071__B4_5-SV.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_076__E5_5-SV.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_081__A5_5-SV.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_086__D6_5-SV.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_091__G6_5-SV.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_096__C7_5-SV.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=48 hivel=72
+<region> sample=jRhodes3d-sv/A_029__F1_4-SV.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_035__B1_4-SV.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_040__E2_4-SV.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_045__A2_4-SV.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_050__D3_4-SV.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_055__G3_4-SV.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_059__B3_4-SV.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_062__D4_4-SV.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_065__F4_4-SV.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_071__B4_4-SV.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_076__E5_4-SV.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_081__A5_4-SV.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_086__D6_4-SV.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_091__G6_4-SV.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_096__C7_4-SV.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=73 hivel=95
+<region> sample=jRhodes3d-sv/A_029__F1_3-SV.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_035__B1_3-SV.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_040__E2_3-SV.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_045__A2_3-SV.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_050__D3_3-SV.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_055__G3_3-SV.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_059__B3_3-SV.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_062__D4_3-SV.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_065__F4_3-SV.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_071__B4_4-SV.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_076__E5_4-SV.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_081__A5_4-SV.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_086__D6_4-SV.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_091__G6_4-SV.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_096__C7_4-SV.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=96 hivel=111
+<region> sample=jRhodes3d-sv/A_029__F1_2-SV.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_035__B1_2-SV.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_040__E2_2-SV.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_045__A2_2-SV.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_050__D3_2-SV.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_055__G3_2-SV.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_059__B3_2-SV.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_062__D4_2-SV.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_065__F4_2-SV.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_071__B4_2-SV.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_076__E5_2-SV.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_081__A5_2-SV.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_086__D6_2-SV.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_091__G6_2-SV.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_096__C7_2-SV.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+<group> lovel=112 hivel=127
+<region> sample=jRhodes3d-sv/A_029__F1_1-SV.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_035__B1_1-SV.flac lokey=A1  hikey=Db2 pitch_keycenter=B1  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_040__E2_1-SV.flac lokey=D2  hikey=Gb2 pitch_keycenter=E2  ampeg_release=0.5
+<region> sample=jRhodes3d-sv/A_045__A2_1-SV.flac lokey=G2  hikey=B2  pitch_keycenter=A2  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_050__D3_1-SV.flac lokey=C3  hikey=E3  pitch_keycenter=D3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_055__G3_1-SV.flac lokey=F3  hikey=A3  pitch_keycenter=G3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_059__B3_1-SV.flac lokey=Bb3 hikey=C4  pitch_keycenter=B3  ampeg_release=0.4
+<region> sample=jRhodes3d-sv/A_062__D4_1-SV.flac lokey=Db4 hikey=Eb4 pitch_keycenter=D4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_065__F4_1-SV.flac lokey=E4  hikey=Ab4 pitch_keycenter=F4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_071__B4_1-SV.flac lokey=A4  hikey=Db5 pitch_keycenter=B4  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_076__E5_1-SV.flac lokey=D5  hikey=Gb5 pitch_keycenter=E5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_081__A5_2-SV.flac lokey=G5  hikey=B5  pitch_keycenter=A5  ampeg_release=0.3
+<region> sample=jRhodes3d-sv/A_086__D6_2-SV.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_091__G6_2-SV.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
+<region> sample=jRhodes3d-sv/A_096__C7_2-SV.flac lokey=Bb6 hikey=Gb7 pitch_keycenter=C7  ampeg_release=0.2
+
+// stereo depth control curve
+<curve> curve_index=99 v000=-1 v060=0 v068=0 v127=2
+
