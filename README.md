@@ -38,22 +38,21 @@ The width for either of these effects is controlled via the MOD wheel.
 MOD wheel at zero is mono; at 50% gives 100% stereo, and pushed higher
 you get "extra stereo."
 
-ISSUES:
-IF you have an issue, please open an issue on this github: github.com/sfzinstruments/jlearman.jRhodes3d .
-
-If you would like a combined SFZ that has mono, stereo and stereo vibrato as programs, open an issue.
-
-
-provides "extra stereo".  When you load the soundfont, you get 100%
-stereo by default, and if you move the MOD wheel, it adjusts accordingly.
-
 Six .szf files are included:
-* jRhodes3d-mono.sfz - mono only
-* jRhodes3d-mono-no-xfade.sfz - mono only, without velocity crossfades
-* jRhodes3d-st.sfz - stereo effect
-* jRhodes3d-st-no-xfade.sfz - stereo effect, without velocity crossfades
-* jRhodes3d-sv.sfz - stereo vibrato effect
-* jRhodes3d-sv-no-xfade.sfz - stereo vibrato effect, without velocity crossfades
+* `jRhodes3d-mono.sfz         ` - mono only
+* `jRhodes3d-mono-no-xfade.sfz` - mono only, without velocity crossfades
+* `jRhodes3d-st.sfz           ` - stereo effect
+* `jRhodes3d-st-no-xfade.sfz  ` - stereo effect, without velocity crossfades
+* `jRhodes3d-sv.sfz           ` - stereo vibrato effect
+* `jRhodes3d-sv-no-xfade.sfz  ` - stereo vibrato effect, without velocity crossfades
+and
+* `jRhodes-keyswitch` which has all the above based on keyswitch:
+  * `G7  ` - stereo with velocity crossfade (default)
+  * `Ab7 ` - stereo without velocity crossfade (default for Zynthian)
+  * `A7  ` - stereo vibrato with velocity crossfad
+  * `Bb7 ` - stereo vibrato without velocity crossfade
+  * `B7  ` - mono with velocity crossfade
+  * `C8  ` - mono without velocity crossfade
 
 ## How-to
 
@@ -92,3 +91,6 @@ The "d" mono samples are identical to the "c" samples but full-length.
 I lost the original sample recordings in a home fire, but fortunately
 I did have distribution copies of the original looped and unlooped
 soundfont files, and these sample sets are recreated from them.
+
+ISSUES:
+If you have an issue, please open an issue on this github: github.com/sfzinstruments/jlearman.jRhodes3d .
