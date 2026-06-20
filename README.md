@@ -92,5 +92,6 @@ I lost the original sample recordings in a home fire, but fortunately
 I did have distribution copies of the original looped and unlooped
 soundfont files, and these sample sets are recreated from them.
 
-ISSUES:
+## Issues
+
 If you have an issue, please open an issue on this github: github.com/sfzinstruments/jlearman.jRhodes3d .
