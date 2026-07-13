@@ -1,13 +1,11 @@
-title: "jRhodes3d"
+title: "jRhodes3d - Stereo Rhodes MK I"
 icon: "Art/jrhodes.jpg"
 author: "Jeff Learman"
 license: "CC BY-NC"
 source_url: "https://github.com/sfzinstruments/jlearman.jRhodes3d.git"
 size: "92MB"
 content: "soundfonts (sfz)"
-description: "Stereo Rhodes MK I
-
-jRhodes3 is my sampling of my 1977 Rhodes Mark I Stage 73 electric piano, which
+description: "jRhodes3 is my sampling of my 1977 Rhodes Mark I Stage 73 electric piano, which
 I purchased new back in 1978. This sample set is not intended to be a jack-of-all-trades
 Rhodes, but rather, it's how I usually set up and used my Rhodes. It was recorded with EQ,
 with a treble boost and low-mid scoop, emphasizing the bell tones, and with
