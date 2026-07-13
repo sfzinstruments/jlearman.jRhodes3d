@@ -2,7 +2,7 @@
 
 DST_DIR="$ZYNTHIAN_DATA_DIR/soundfonts/sfz/Pianos"
 RELEASE="2607"
-DOWNLOAD_URL="https://github.com/zynthian/jlearman-jRhodes3d/archive/refs/tags/$RELEASE.zip"
+DOWNLOAD_URL="https://github.com/zynthian/jlearman.jRhodes3d/archive/refs/tags/$RELEASE.zip"
 DIRNAME="jRhodes3d"
 
 do_install() {
