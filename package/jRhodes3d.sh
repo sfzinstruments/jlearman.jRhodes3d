@@ -12,7 +12,7 @@ do_install() {
     wget -q "$DOWNLOAD_URL"
     unzip -q "$RELEASE.zip"
     rm -f "$RELEASE.zip"
-    mv "$DIRNAME-$RELEASE" "$DIRNAME"
+    mv "jlearman.$DIRNAME-$RELEASE" "$DIRNAME"
     rm -rf "$DIRNAME/package"
     mv "$DIRNAME/jRhodes3d-demo.mp3" "$ZYNTHIAN_MY_DATA_DIR/files/Audio/Tracks"
     set +x
