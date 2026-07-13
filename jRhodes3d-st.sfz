@@ -8,7 +8,7 @@ A0 bankname: jRhodes3d
 // technique so when summed to mono the effect disappears completley.
 
 <control>
-label_cc1=Mod:width
+label_cc1=Stereo Width
 set_hdcc1=0.5
 default_path=jRhodes3d-st/
 

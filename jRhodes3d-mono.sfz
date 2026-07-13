@@ -6,8 +6,23 @@
 // My intent was to get the same FX result but I might not have achieved that.
 
 <control>
-label_cc1=Mod:width
-set_hdcc1=0.5
+
+// Tremolo controllers
+label_cc1=Tremolo Amp
+label_cc92=Tremolo Freq
+label_cc93=Tremolo Delay
+label_cc94=Tremolo Fade
+set_hdcc1=0
+set_hdcc92=0.5
+set_hdcc93=0.25
+set_hdcc94=0.25
+
+// AutoPan controllers
+label_cc95=AutoPan Depth
+label_cc96=AutoPan Freq
+set_hdcc95=0
+set_hdcc96=0.25
+
 default_path=jRhodes3d-mono/
 
 // Half-pedal support for sustain pedal.
@@ -36,9 +51,32 @@ v127=1
 
 <master>
 volume=6
-// Mod wheel controls stereo depth
-width_oncc1=100
-width_curvecc1=99
+
+// Implement amplitude modulation with mod-wheel
+// 1. Define the LFO properties
+lfo01_wave=0         // Waveform shape (1 = Triangle, 0 = Sine, 2 = Sawtooth)
+// 2. Map the Mod Wheel (CC 1) to control the depth
+lfo01_volume=0         // Base depth is 0 (no effect when mod wheel is down)
+lfo01_volume_oncc1=6   // Pushing the mod wheel all the way up adds 6 dB of volume modulation
+// 3. Map CC92 to control the tremolo frequency
+lfo01_freq=0.1         // Base frequency 0.1Hz
+lfo01_freq_oncc92=9.9  // Value in Hertz when CC92 is at maximum (10.0 Hz)
+// 4. Map cc93 to control the tremolo delay
+lfo01_delay=0.0        // Base delay
+lfo01_delay_oncc93=2.0 // Maximum delay
+// 5. Map cc94 to control the tremolo fade-in
+lfo01_fade=0.0        // Base fade-in time
+lfo01_fade_oncc94=2.0 // Maximum fade-in time
+
+// Implement Auto-Pan
+// 1. Setup the LFO
+lfo02_wave=0           // Smooth Sine wave (best for seamless left-to-right gliding)
+// 2. Map CC95 to Auto-Pan Depth
+lfo02_pan=0            // Base panning depth is 0 (stays perfectly in the center)
+lfo02_pan_oncc95=100   // Pushing the knob up allows full left-to-right sweep (-100 to +100)
+// 3. Map CC96 to Auto-Pan Speed
+lfo02_freq=0.1         // Base panning speed (0.1 Hz)
+lfo02_freq_oncc96=9.9   // Knob adds up to 10 Hz to the speed (Total 10.0 Hz max)
 
 <group> lovel=1 xfout_lovel=25 xfout_hivel=60 hivel=60
 <region> sample=A_029__F1_5.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5
@@ -124,7 +162,4 @@ width_curvecc1=99
 <region> sample=A_086__D6_2.flac lokey=C6  hikey=E6  pitch_keycenter=D6  ampeg_release=0.2
 <region> sample=A_091__G6_2.flac lokey=F6  hikey=A6  pitch_keycenter=G6  ampeg_release=0.2
 <region> sample=A_096__C7_2.flac lokey=Bb6 hikey=C8  pitch_keycenter=C7  ampeg_release=0.2
-
-// stereo depth control curve
-<curve> curve_index=99 v000=-1 v060=0 v068=0 v127=2
 

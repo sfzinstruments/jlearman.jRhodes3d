@@ -6,7 +6,7 @@
 // stereo vibrato.
 
 <control>
-label_cc1=Mod:width
+label_cc1=Stereo Width
 set_hdcc1=0.5
 default_path=jRhodes3d-sv/
 
