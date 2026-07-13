@@ -14,7 +14,7 @@ do_install() {
     rm -f "$RELEASE.zip"
     mv "$DIRNAME-$RELEASE" "$DIRNAME"
     rm -rf "$DIRNAME/package"
-    mv "$DIRNAME/jRhodes3d-demo.mp3" "$ZYNTHIAN_DATA_DIR/files/Audio/Tracks"
+    mv "$DIRNAME/jRhodes3d-demo.mp3" "$ZYNTHIAN_MY_DATA_DIR/files/Audio/Tracks"
     set +x
     echo "installed"
 }
@@ -22,6 +22,7 @@ do_install() {
 do_uninstall() {
     if [[ $(is_installed) == "installed" ]]; then
         rm -rf "$DST_DIR/$DIRNAME"
+        rm -f "$ZYNTHIAN_MY_DATA_DIR/files/Audio/Tracks/jRhodes3d-demo.mp3"
         echo "uninstalled"
     else
         echo "not installed"
