@@ -1,32 +1,27 @@
 #!/bin/bash
 
-DST_DIR="$ZYNTHIAN_DATA_DIR/soundfonts/sfz/Pianos/jRhodes3d"
-DOWNLOAD_URL="https://github.com/sfzinstruments/jlearmanan-jRhodes3d/archive/refs/heads/main.zip"
-PKG_NAME="jRhodes3d"
-TMP_DIR=$(mktemp -d)
-
-trap 'rm -rf "$TMP_DIR"' EXIT
+DST_DIR="$ZYNTHIAN_DATA_DIR/soundfonts/sfz/Pianos"
+RELEASE="2607"
+DOWNLOAD_URL="https://github.com/zynthian/jlearman-jRhodes3d/archive/refs/tags/$RELEASE.zip"
+DIRNAME="jRhodes3d"
 
 do_install() {
     set -ex
-    mkdir -p "$TMP_DIR" || ( echo "Can't make temp dir $TMP_DIR"; exit 1)
-    wget --directory-prefix "$TMP_DIR" -q "$DOWNLOAD_URL"
-    unzip -q "$TMP_DIR/main.zip" -d "$TMP_DIR"
-    rm -rf "$DST_DIR"
     mkdir -p "$DST_DIR"
-    rm -f "$TMP_DIR/package"
-
-    # specific to jRhodes: remove extra sfz files, just use the keyuswitch sfz
-    rm jRhodes3d-[ms]*.sfz
-
-    mv "$TMP_DIR"/$PKG_NAME/* "$DST_DIR"
+    cd "$DST_DIR"
+    wget -q "$DOWNLOAD_URL"
+    unzip -q "$RELEASE.zip"
+    rm -f "$RELEASE.zip"
+    mv "$DIRNAME-$RELEASE" "$DIRNAME"
+    rm -rf "$DIRNAME/package"
+    mv "$DIRNAME/jRhodes3d-demo.mp3" "$ZYNTHIAN_DATA_DIR/files/Audio/Tracks"
     set +x
     echo "installed"
 }
 
 do_uninstall() {
     if [[ $(is_installed) == "installed" ]]; then
-        rm -rf "$DST_DIR"
+        rm -rf "$DST_DIR/$DIRNAME"
         echo "uninstalled"
     else
         echo "not installed"
@@ -34,7 +29,7 @@ do_uninstall() {
 }
 
 is_installed() {
-    if [[ -d "$DST_DIR" ]]; then
+    if [[ -d "$DST_DIR/$DIRNAME" ]]; then
         echo "installed"
     else
         echo "not installed"
