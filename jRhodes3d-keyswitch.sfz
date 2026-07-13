@@ -16,7 +16,7 @@
 // C8   - mono without velocity crossfade
 
 <control>
-label_cc1=Stereo width
+label_cc1=Stereo Width
 set_hdcc1=0.5
 
 <global>

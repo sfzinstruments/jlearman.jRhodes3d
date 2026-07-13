@@ -1,0 +1,28 @@
+
+controllers:
+ Main:
+  volume:
+   midi_cc: 7
+   value: 127
+   name: "Volume"
+  pan:
+   midi_cc: 10
+   value: 64
+   name: "Pan"
+  expression:
+   midi_cc: 11
+   value: 127
+   name: "Expression"
+  mode:
+   graph_path: 'note_on'
+   labels: ['Stereo XF', 'Stereo', "Stereo Vib XF", "Stereo Vib", "Mono XF", "Mono"]
+   ticks: [103, 104, 105, 106, 107, 108]
+   name: "Mode"
+
+ Stereo Width:
+  stereo_width:
+   midi_cc: 1
+   value: 63
+   name: "Stereo Width"
+
+
