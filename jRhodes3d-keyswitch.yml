@@ -3,7 +3,7 @@ controllers:
  Main:
   volume:
    midi_cc: 7
-   value: 127
+   value: 96
    name: "Volume"
   pan:
    midi_cc: 10
