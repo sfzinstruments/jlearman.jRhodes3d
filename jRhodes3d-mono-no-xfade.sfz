@@ -10,18 +10,20 @@
 // Tremolo controllers
 label_cc1=Tremolo Amp
 label_cc92=Tremolo Freq
-label_cc93=Tremolo Delay
-label_cc94=Tremolo Fade
 set_hdcc1=0
 set_hdcc92=0.5
-set_hdcc93=0.25
-set_hdcc94=0.25
 
 // AutoPan controllers
-label_cc95=AutoPan Depth
-label_cc96=AutoPan Freq
-set_hdcc95=0
-set_hdcc96=0.25
+label_cc94=AutoPan Depth
+label_cc95=AutoPan Freq
+set_hdcc94=0
+set_hdcc95=0.5
+
+// FX Delay
+label_cc97=FX Delay
+label_cc98=FX Fade
+set_hdcc97=0.0
+set_hdcc98=0.0
 
 default_path=jRhodes3d-mono/
 
@@ -52,31 +54,35 @@ v127=1
 <master>
 volume=6
 
-// Implement amplitude modulation with mod-wheel
-// 1. Define the LFO properties
-lfo01_wave=0         // Waveform shape (1 = Triangle, 0 = Sine, 2 = Sawtooth)
-// 2. Map the Mod Wheel (CC 1) to control the depth
-lfo01_volume=0         // Base depth is 0 (no effect when mod wheel is down)
-lfo01_volume_oncc1=6   // Pushing the mod wheel all the way up adds 6 dB of volume modulation
-// 3. Map CC92 to control the tremolo frequency
-lfo01_freq=0.1         // Base frequency 0.1Hz
-lfo01_freq_oncc92=9.9   // Value in Hertz when CC92 is at maximum (10.0 Hz)
-// 4. Map cc93 to control the tremolo delay
-lfo01_delay=0.0        // Base delay
-lfo01_delay_oncc93=2.0 // Maximum delay
-// 5. Map cc94 to control the tremolo fade-in
-lfo01_fade=0.0        // Base fade-in time
-lfo01_fade_oncc94=2.0 // Maximum fade-in time
+// Implement tremolo (amplitude modulation) with mod-wheel
+lfo01_wave=0              // Waveform shape (0 = Sine, 1 = Triangle, 2 = Sawtooth)
+// 1. Map the Mod Wheel (CC 1) to control the depth
+lfo01_volume=0.0          // Base volume
+lfo01_volume_oncc1=6.0    // Pushing the mod wheel all the way up adds 6 dB of volume modulation
+// 2. Map CC92 to control the tremolo frequency
+lfo01_freq=0.1            // Base frequency 0.1Hz
+lfo01_freq_oncc92=9.9     // Knob adds up to 9.9 Hz to the speed (Total 10.0 Hz max)
 
 // Implement Auto-Pan
-// 1. Setup the LFO
-lfo02_wave=0           // Smooth Sine wave (best for seamless left-to-right gliding)
-// 2. Map CC95 to Auto-Pan Depth
+lfo02_wave=0           // Waveform shape (0 = Sine, 1 = Triangle, 2 = Sawtooth)
+// 1. Map CC95 to Auto-Pan Depth
 lfo02_pan=0            // Base panning depth is 0 (stays perfectly in the center)
-lfo02_pan_oncc95=100   // Pushing the knob up allows full left-to-right sweep (-100 to +100)
-// 3. Map CC96 to Auto-Pan Speed
+lfo02_pan_oncc94=100   // Pushing the knob up allows full left-to-right sweep (-100 to +100)
+// 2. Map CC96 to Auto-Pan Speed
 lfo02_freq=0.1         // Base panning speed (0.1 Hz)
-lfo02_freq_oncc96=9.9   // Knob adds up to 10 Hz to the speed (Total 10.0 Hz max)
+lfo02_freq_oncc95=9.9  // Knob adds up to 9.9 Hz to the speed (Total 10.0 Hz max)
+
+// 3. Map CC to control the FX delay
+lfo01_delay=0.0        // Base delay
+lfo02_delay=0.0
+lfo01_delay_oncc97=2.0 // Maximum delay
+lfo02_delay_oncc97=2.0
+
+// 4. Map CC to control the FX fade-in
+lfo01_fade=0.0         // Base fade-in time
+lfo02_fade=0.0
+lfo01_fade_oncc98=2.0  // Maximum fade-in time
+lfo02_fade_oncc98=2.0
 
 <group> lovel=1 hivel=47
 <region> sample=A_029__F1_5.flac lokey=A0  hikey=Ab1 pitch_keycenter=F1  ampeg_release=0.5

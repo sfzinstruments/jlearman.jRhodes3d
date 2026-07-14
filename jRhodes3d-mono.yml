@@ -14,7 +14,7 @@ controllers:
    value: 127
    name: "Expression"
 
- Tremolo:
+ Tremolo & AutoPan:
   tremolo_amp:
    midi_cc: 1
    is_integer: False
@@ -29,33 +29,33 @@ controllers:
    value_max: 10.0
    value: 5.0
    name: "Tremolo Freq (hz)"
-  tremolo_delay:
-   midi_cc: 93
-   is_integer: False
-   value_min: 0.0
-   value_max: 2.0
-   value: 0.5
-   name: "Tremolo Delay (s)"
-  tremolo_fade:
-   midi_cc: 94
-   is_integer: False
-   value_min: 0.0
-   value_max: 2.0
-   value: 0.5
-   name: "Tremolo Fade (s)"
-
- AutoPan:
   autopan_depth:
-   midi_cc: 95
-   is_integer: False
-   value_min: 0.0
-   value_max: 100.0
+   midi_cc: 94
+   is_integer: True
+   value_min: 0
+   value_max: 100
    value: 0
    name: "Autopan Depth (%)"
   autopan_freq:
-   midi_cc: 96
+   midi_cc: 95
    is_integer: False
    value_min: 0.1
    value_max: 10.0
-   value: 2.5
+   value: 5.0
    name: "Autopan Freq (hz)"
+
+ FX Delay:
+  fx_delay:
+   midi_cc: 97
+   is_integer: False
+   value_min: 0.0
+   value_max: 2.0
+   value: 0.0
+   name: "FX Delay (s)"
+  fx_fade:
+   midi_cc: 98
+   is_integer: False
+   value_min: 0.0
+   value_max: 2.0
+   value: 0.0
+   name: "FX Fade (s)"
