@@ -31,28 +31,32 @@ effect options.  In each case, it's provided with and without velocity crossfade
 with velocity.  However, this also causes some phase issues in low notes, so you
 get your choice.)
 
-* The stereo effect is a mild pitch-shift doubling to create a stereo image, applied in mid-side effect so that it cancels out when summed to mono.
-* The stereo vibrato effect is similar to the classic Suitcase Rhodes stereo vibrato, except that the vibrato applies to each note individually rather than the whole mix.  This makes it sound very different from the classic effect, but nonetheless it's a very interesting effect.
+A single SFZ is included with 4 instrument versions via keyswitch:
 
-The width for either of these effects is controlled via the MOD wheel.
-MOD wheel at zero is mono; at 50% gives 100% stereo, and pushed higher
-you get "extra stereo."
-
-Six .szf files are included:
-* `jRhodes3d-mono.sfz         ` - mono only
-* `jRhodes3d-mono-no-xfade.sfz` - mono only, without velocity crossfades
-* `jRhodes3d-st.sfz           ` - stereo effect
-* `jRhodes3d-st-no-xfade.sfz  ` - stereo effect, without velocity crossfades
-* `jRhodes3d-sv.sfz           ` - stereo vibrato effect
-* `jRhodes3d-sv-no-xfade.sfz  ` - stereo vibrato effect, without velocity crossfades
-and
-* `jRhodes-keyswitch` which has all the above based on keyswitch:
   * `G7  ` - stereo with velocity crossfade (default)
   * `Ab7 ` - stereo without velocity crossfade (default for Zynthian)
-  * `A7  ` - stereo vibrato with velocity crossfad
-  * `Bb7 ` - stereo vibrato without velocity crossfade
-  * `B7  ` - mono with velocity crossfade
-  * `C8  ` - mono without velocity crossfade
+  * `A7  ` - mono with velocity crossfade
+  * `Bb7  ` - mono without velocity crossfade
+
+##Effects:
+
+The stereo effect is a mild pitch-shift doubling to create a stereo image, applied in mid-side effect so that it cancels out when summed to mono.
+The width for either of these effects is controlled via CC76. CC76 at zero is mono; at 50% gives 100% stereo, and pushed higher
+you get "extra stereo."
+
+Tremolo and Autopan are implemented using SFZ opcodes. 
+
+The assigned CC numbers:
+
+- CC7: Main Volume
+- CC10: Pan
+- CC76: Stereo Width (0 - 200%)
+- CC1 (Mod wheel): Tremolo Amplitude (0 - 6 dB)
+- CC92: Tremolo Frequency (0.1 - 10 Hz)
+- CC94: AutoPan Depth (0 - 100%)
+- CC95: AutoPan Frequency (0.1 - 10 Hz)
+- CC97: FX delay (0 - 2 secs)
+- CC98: FX fade-in (0 - 2 secs)
 
 ## How-to
 
