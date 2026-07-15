@@ -8,40 +8,50 @@ content: "soundfonts (sfz)"
 description: "jRhodes3 is my sampling of my 1977 Rhodes Mark I Stage 73 electric piano, which
 I purchased new back in 1978. This sample set is not intended to be a jack-of-all-trades
 Rhodes, but rather, it's how I usually set up and used my Rhodes. It was recorded with EQ,
-with a treble boost and low-mid scoop, emphasizing the bell tones, and with
-substantial bark on the higher velocity layers. There are 5 layers, sampled
-to peak at 3dB difference per layer at on the low notes and to maintain volume
-throughout each layer. Not all layers are full-keyboard width, as higher notes
-don't change timbre as much.
+with a treble boost and low-mid scoop, emphasizing the bell tones, and with substantial
+bark on the higher velocity layers. There are 5 layers, sampled to peak at 3dB difference
+per layer at on the low notes and to maintain volume throughout each layer. Not all layers
+are full-keyboard width, as higher notes don't change timbre as much.
 
-The set includes 67 16-bit full-length samples, with up to 5 velocity layers,
-sampling every 4th white key.
-The samples were recorded directly from the harp connector.
+The set includes 67 x 16-bit full-length samples, with up to 5 velocity layers,
+sampling every 4th white key. The samples were recorded directly from the harp connector.
 Samples are encoded in lossless FLAC format to reduce disk space.
 
-Three versions are provided, each with and without velocity cross-fading:
+Two versions are provided, each with and without velocity cross-fading:
 - Mono
 - Stereo - a mild stereo chorus
-- Stereo Vibrato - classic Fender Rhodes stereo vibrato, almost
+
+Effects:
+
+Stereo-width, Tremolo and Autopan are implemented using SFZ opcodes.
+Since stereo effect are applied using mid-side technique, the effect cancels out completely in mono.
+However, stereo versions use two voices per note, so use mono version to get more polyphony.
 
 Controls:
-- MOD wheel controls stereo width.  Since stereo effects are applied using
-  mid-side technique, the effect cancels out completely in mono.  However,
-  stereo versions use two voices per note, so use mono version to get more
-  polyphony.
+
+- CC7: Main Volume
+- CC10: Pan
+- CC76: Stereo Width (0 - 200%)
+- CC1 (Mod wheel): Tremolo Amplitude (0 - 6 dB)
+- CC92: Tremolo Frequency (0.1 - 10 Hz)
+- CC94: AutoPan Depth (0 - 100%)
+- CC95: AutoPan Frequency (0.1 - 10 Hz)
+- CC97: FX delay (0 - 2 secs)
+- CC98: FX fade-in (0 - 2 secs)
 
 Keyswitches:
-- Use keyswitches to select version and with or without velocity crossfades.
-  Velocity crossfades smooth the transitions between velocity layers, but with
-  two negative side effects.  The number of voices used per note is doubled,
-  and on the Rhodes, low notes get some phasing, because the Rhodes low notes
-  go a bit sharp when struck harder.
-  C4 is Middle C (ISO Scientific Pitch Notation.)
-- G7   - stereo with velocity crossfade (default)
-- Ab7  - stereo without velocity crossfade
-- A7   - stereo vibrato with velocity crossfade
-- Bb7  - stereo vibrato without velocity crossfade
-- B7   - mono with velocity crossfade
-- C8   - mono without velocity crossfade
+
+Use keyswitches to select version and with or without velocity crossfades.
+Velocity crossfades smooth the transitions between velocity layers, but with
+two negative side effects.  The number of voices used per note is doubled,
+and on the Rhodes, low notes get some phasing, because the Rhodes low notes
+go a bit sharp when struck harder.
+
+ - G7   - stereo with velocity crossfade (default)
+ - Ab7  - stereo without velocity crossfade
+ - A7   - mono with velocity crossfade
+ - Bb7   - mono without velocity crossfade
+
+(*) C4 is Middle C (ISO Scientific Pitch Notation)
 
 "

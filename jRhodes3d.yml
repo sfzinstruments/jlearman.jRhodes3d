@@ -9,10 +9,18 @@ controllers:
    midi_cc: 10
    value: 64
    name: "Pan"
-  expression:
-   midi_cc: 11
-   value: 127
-   name: "Expression"
+  mode:
+   graph_path: 'note_on'
+   labels: ['Stereo XF', 'Stereo', "Mono XF", "Mono"]
+   ticks: [103, 104, 105, 106]
+   name: "Mode"
+  stereo_width:
+   midi_cc: 76
+   is_integer: True
+   value_min: 0
+   value_max: 200
+   value: 100
+   name: "Stereo Width"
 
  Tremolo & AutoPan:
   tremolo_amp:
@@ -59,3 +67,5 @@ controllers:
    value_max: 2.0
    value: 0.0
    name: "FX Fade (s)"
+
+
