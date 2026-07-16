@@ -1,0 +1,71 @@
+
+controllers:
+ Main:
+  volume:
+   midi_cc: 7
+   value: 96
+   name: "Volume"
+  pan:
+   midi_cc: 10
+   value: 64
+   name: "Pan"
+  mode:
+   graph_path: 'note_on'
+   labels: ['Stereo XF', 'Stereo', "Mono XF", "Mono"]
+   ticks: [103, 104, 105, 106]
+   name: "Mode"
+  stereo_width:
+   midi_cc: 76
+   is_integer: True
+   value_min: 0
+   value_max: 200
+   value: 100
+   name: "Stereo Width"
+
+ Tremolo & AutoPan:
+  tremolo_amp:
+   midi_cc: 1
+   is_integer: False
+   value_min: 0.0
+   value_max: 6.0
+   value: 0
+   name: "Tremolo Amp (db)"
+  tremolo_freq:
+   midi_cc: 92
+   is_integer: False
+   value_min: 0.1
+   value_max: 10.0
+   value: 5.0
+   name: "Tremolo Freq (hz)"
+  autopan_depth:
+   midi_cc: 94
+   is_integer: True
+   value_min: 0
+   value_max: 100
+   value: 0
+   name: "Autopan Depth (%)"
+  autopan_freq:
+   midi_cc: 95
+   is_integer: False
+   value_min: 0.1
+   value_max: 10.0
+   value: 5.0
+   name: "Autopan Freq (hz)"
+
+ FX Delay:
+  fx_delay:
+   midi_cc: 97
+   is_integer: False
+   value_min: 0.0
+   value_max: 2.0
+   value: 0.0
+   name: "Start Time"
+  fx_fade:
+   midi_cc: 98
+   is_integer: False
+   value_min: 0.0
+   value_max: 2.0
+   value: 0.0
+   name: "Fade-in Time"
+
+
