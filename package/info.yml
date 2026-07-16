@@ -4,7 +4,7 @@ author: "Jeff Learman"
 license: "CC BY-NC"
 source_url: "https://github.com/sfzinstruments/jlearman.jRhodes3d.git"
 size: "60MB"
-content: "soundfonts (sfz)"
+content: "sfz/Pianos"
 description: "jRhodes3 is my sampling of my 1977 Rhodes Mark I Stage 73 electric piano, which
 I purchased new back in 1978. This sample set is not intended to be a jack-of-all-trades
 Rhodes, but rather, it's how I usually set up and used my Rhodes. It was recorded with EQ,
@@ -35,8 +35,8 @@ However, stereo versions use two voices per note, so use mono version to get mor
 - CC92: Tremolo Frequency (0.1 - 10 Hz)<br/>
 - CC94: AutoPan Depth (0 - 100%)<br/>
 - CC95: AutoPan Frequency (0.1 - 10 Hz)<br/>
-- CC97: FX delay (0 - 2 secs)<br/>
-- CC98: FX fade-in (0 - 2 secs)<br/>
+- CC97: FX delay - Start Time (0 - 2 secs)<br/>
+- CC98: FX delay - Fade-in Time (0 - 2 secs)<br/>
 
 <b>Keyswitches:</b><br/>
 Use keyswitches to select version and with or without velocity crossfades.

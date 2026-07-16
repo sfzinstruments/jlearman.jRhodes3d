@@ -59,13 +59,13 @@ controllers:
    value_min: 0.0
    value_max: 2.0
    value: 0.0
-   name: "FX Delay (s)"
+   name: "Start Time"
   fx_fade:
    midi_cc: 98
    is_integer: False
    value_min: 0.0
    value_max: 2.0
    value: 0.0
-   name: "FX Fade (s)"
+   name: "Fade-in Time"
 
 

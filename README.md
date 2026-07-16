@@ -55,8 +55,8 @@ The assigned CC numbers:
 - CC92: Tremolo Frequency (0.1 - 10 Hz)
 - CC94: AutoPan Depth (0 - 100%)
 - CC95: AutoPan Frequency (0.1 - 10 Hz)
-- CC97: FX delay (0 - 2 secs)
-- CC98: FX fade-in (0 - 2 secs)
+- CC97: FX delay - Start Time (0 - 2 secs)
+- CC98: FX delay - Fade-in Time (0 - 2 secs)
 
 ## How-to
 
