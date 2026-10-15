@@ -13,6 +13,7 @@ controllers:
    graph_path: 'note_on'
    labels: ['Stereo XF', 'Stereo', "Mono XF", "Mono"]
    ticks: [103, 104, 105, 106]
+   value: 'Mono'
    name: "Mode"
   stereo_width:
    midi_cc: 76

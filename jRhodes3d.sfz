@@ -28,7 +28,7 @@ set_hdcc92=0.5
 label_cc94=AutoPan Depth
 label_cc95=AutoPan Freq
 set_hdcc94=0
-set_hdcc95=0.05
+set_hdcc95=0.5
 
 // FX Delay
 label_cc97=FX Delay
@@ -40,7 +40,7 @@ set_hdcc98=0.0
 volume=6
 
 // Implement tremolo (amplitude modulation) with mod-wheel
-lfo01_wave=0              // Waveform shape (0 = Sine, 1 = Triangle)
+lfo01_wave=0              // Waveform shape (0 = Sine, 1 = Triangle, 2 = Sawtooth)
 // 1. Map the Mod Wheel (CC 1) to control the depth
 lfo01_volume=0.0          // Base volume
 lfo01_volume_oncc1=6.0    // Pushing the mod wheel all the way up adds 6 dB of volume modulation
@@ -49,8 +49,7 @@ lfo01_freq=0.1            // Base frequency 0.1Hz
 lfo01_freq_oncc92=9.9     // Knob adds up to 9.9 Hz to the speed (Total 10.0 Hz max)
 
 // Implement Auto-Pan
-lfo02_wave=0           // Waveform shape (0 = Sine, 1 = Triangle)
-lfo02_phase=0.4        // Start just right of center and pan to left
+lfo02_wave=0           // Waveform shape (0 = Sine, 1 = Triangle, 2 = Sawtooth)
 // 1. Map CC95 to Auto-Pan Depth
 lfo02_pan=0            // Base panning depth is 0 (stays perfectly in the center)
 lfo02_pan_oncc94=100   // Pushing the knob up allows full left-to-right sweep (-100 to +100)
@@ -73,7 +72,7 @@ lfo02_fade_oncc98=2.0
 // 5. Map CC to stereo width (has no effect on mono samples!)
 width_oncc76=100
 width_curvecc76=99
-sw_lokey=G7 sw_hikey=C8 sw_default=G7
+sw_lokey=G7 sw_hikey=C8 sw_default=Bb7
 
 // Half-pedal support for sustain pedal.
 // Andrew <https://github.com/esesur> and Peter <https://github.com/peastman>)
